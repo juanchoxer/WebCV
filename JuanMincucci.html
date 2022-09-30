@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<style>
+      @import url("https://fonts.googleapis.com/css?family=Quicksand:400,700");
+
+      html,
+      body {
+        background: #ccc;
+        font-family: Quicksand, Arial, Verdana, sans-serif;
+        font-size: 14px;
+        color: #444;
+      }
+
+      main {
+        background: #fff;
+        box-sizing: border-box;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+        margin: 2rem auto;
+        padding: 2.75rem;
+        position: relative;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 2.5rem;
+        line-height: 2rem;
+        font-weight: normal;
+        color: #000;
+      }
+
+      h2 {
+        color: #47a;
+        font-size: 1rem;
+        font-weight: bold;
+        margin: 0;
+        margin-top: 1.5rem;
+        text-transform: uppercase;
+      }
+
+      h3 {
+        color: #111;
+        font-size: 1.25rem;
+        margin-top: 0rem;
+        margin: 0;
+        font-weight: normal;
+      }
+
+      h3 span.dept {
+        color: #aaa;
+      }
+
+      h3 span.dept::before {
+        content: "";
+        border-left: 1px solid #ccc;
+        padding-left: 0.4rem;
+      }
+
+      h4 {
+        margin: 0;
+        font-weight: normal;
+      }
+
+      h4 span.dates {
+        color: #888;
+        display: inline-block;
+        float: right;
+      }
+
+      p {
+        font-size: 1rem;
+        margin-top: 0.5rem;
+        margin-bottom: 0;
+      }
+
+      a {
+        color: #369;
+      }
+
+      a:hover {
+        color: #36c;
+      }
+
+      time {
+        display: inline-block;
+        min-width: 2rem;
+      }
+
+      address {
+        font-style: normal;
+      }
+
+      .normal {
+        font-weight: normal;
+      }
+
+      .position {
+        margin-top: 0.75rem;
+        transition: opacity 0.7s;
+      }
+
+      .no-bullets,
+      .no-bullets ul {
+        list-style: none;
+        margin-left: 0;
+        padding-left: 0;
+        color: #000;
+        font-weight: bold;
+      }
+      .no-bullets ul {
+        font-weight: normal;
+      }
+      .no-bullets span {
+        color: #666;
+      }
+
+      #contact {
+        text-align: right;
+        font-size: 0.9rem;
+      }
+
+      #phone {
+        font-size: 1.25rem;
+        font-weight: bold;
+        text-decoration: none !important;
+      }
+
+      #location {
+        font-size: 1.1rem;
+      }
+
+      #languages {
+        column-count: 4;
+      }
+
+      a,
+      a:visited,
+      a:link,
+      a:active,
+      a:focus,
+      #languages label {
+        color: #395;
+      }
+
+      #professional-experience {
+        position: relative;
+      }
+
+      main input {
+        position: absolute;
+        left: -10000px;
+      }
+
+      .educert {
+        display: flex;
+      }
+      .educert li {
+        flex: 1;
+        align-items: start;
+        justify-content: start;
+      }
+
+
+      label {
+        cursor: pointer;
+      }
+
+      #contact-mini {
+        display: flex;
+        margin-top: 1rem;
+      }
+
+      #contact-mini > div {
+        font-size: 0.75rem;
+        flex: 1;
+      }
+
+      #contact-mini > div:nth-child(2) {
+        text-align: center;
+        flex: 2;
+      }
+      #contact-mini > div:last-child {
+        text-align: right;
+      }
+
+      input:checked ~ div #languages label[for]::before,
+      input:not(:checked) ~ div #languages label[for]::before {
+        content: "";
+      }
+
+      #contact {
+        display: none;
+      }
+
+      @media all and (min-width: 630px) {
+        main {
+          max-width: 600px;
+        }
+        #contact-mini > div {
+          font-size: 1rem;
+        }
+      }
+
+      @media all and (min-width: 1000px) {
+        html,
+        body {
+          font-size: 16px;
+        }
+        main {
+          max-width: 920px;
+          display: flex;
+        }
+        main > div:first-child {
+          flex: 1;
+        }
+        main > div:last-child {
+          width: 21%;
+          margin-left: 4%;
+        }
+        #languages {
+          column-count: 1;
+        }
+        .educert {
+          display: block;
+        }
+        .educert > li:nth-child(n + 2) {
+          margin-top: 0.75rem;
+        }
+        #contact-mini {
+          display: none;
+        }
+        #contact {
+          display: block;
+        }
+        #email,
+        #website {
+          font-size: 0.9em;
+        }
+      }
+
+      @media all and (min-width: 1200px) {
+        html,
+        body {
+          font-size: 18px;
+        }
+        main {
+          max-width: 1120px;
+        }
+        #email,
+        #website {
+          font-size: 1em !important;
+        }
+      }
+
+      @media print {
+        @page {
+          size: 900px;
+        }
+        html,
+        body {
+          background: #fff;
+          font-size: 16px;
+          width: 900px;
+        }
+        a,
+        a:visited,
+        a:link,
+        a:active,
+        a:focus,
+        #languages label {
+          text-decoration: none;
+          color: #000;
+        }
+        main {
+          margin: 0;
+          max-width: 920px;
+          display: flex;
+          box-shadow: none;
+        }
+        main > div:first-child {
+          flex: 1;
+        }
+        main > div:last-child {
+          width: 21%;
+          margin-left: 4%;
+        }
+        #languages {
+          column-count: 1;
+        }
+        .educert {
+          display: block;
+        }
+        .educert > li:nth-child(n + 2) {
+          margin-top: 0.75rem;
+        }
+        .position {
+          opacity: 1 !important;
+        }
+        #contact-mini {
+          display: none;
+        }
+        #contact {
+          display: block;
+        }
+      }
+    </style>
+	</head>
+	<body>
+		<main id="resume" itemscope itemtype="http://schema.org/Person">
+		<div>
+			<header>
+				<h1 itemprop="name">Juan Mincucci</h1>
+				<p id="objective" itemprop="description">
+					<span itemprop="jobTitle">Senior FullStack Developer</span>
+				</p>
+			</header>
+			
+			<section id="professional-experience">
+				<h2>Experience</h2>
+				
+				<section
+					itemprop="memberOf"
+					itemscope
+					itemtype="http://schema.org/Organization"
+				>
+					<h3>
+						<span itemprop="name">MajoyKey</span>
+						<span class="dept" itemprop="department">ShipBob</span>
+					</h3>
+					<h4
+						itemprop="member"
+						itemscope
+						itemtype="http://schema.org/OrganizationRole"
+					>
+						<span itemprop="roleName">Senior FullStack Developer</span>
+						<span class="dates">
+						<time itemprop="startDate">11/2020</time>
+						-
+						<time itemprop="endDate">Current</time>
+						</span>
+					</h4>
+					<ul itemprop="description">
+						<li>
+							Development of cloud-native applications in Azure based on architecture oriented to microservices with Net 6, Entity Framework core, SQL Server, in an Agile work environment under the Scrum methodology.
+						</li>
+						<li>
+							Participation in market specifications, scrum ceremonies and code reviews with US-located team.
+						</li>
+						<li>
+							Presentation of the team's progress at the client´s Engineering Demos.
+						</li>
+						<li>
+							Responsible of solving urgent customer problems with fast development, testing and deliveries using Azure.
+						</li>
+						<li>
+							Handling of business tickets/requirements, Internal technical support.
+						</li>
+					</ul>
+				</section>
+				
+				<section
+					itemprop="memberOf"
+					itemscope
+					itemtype="http://schema.org/Organization"
+				>
+					<h3>
+						<span itemprop="name">Epidata</span>
+						<span class="dept" itemprop="department">Telefe</span>
+					</h3>
+					<h4
+						itemprop="member"
+						itemscope
+						itemtype="http://schema.org/OrganizationRole"
+					>
+						<span itemprop="roleName">Senior FullStack Developer / Team Lead</span>
+						<span class="dates">
+						<time itemprop="startDate">05/2019</time>
+						-
+						<time itemprop="endDate">11/2020</time>
+						</span>
+					</h4>
+					<ul itemprop="description">
+						<li>
+							In charge of schedule allocation process for advertisements on different television channels. 
+						</li>
+						<li>
+							Use and creation of microservices, API Rest and SOAP with internal 
+							and external services, WCF, AD, unit testing, and scrum methodologies.
+						</li>
+						<li>
+							Responsible of planning sprints, assigning tasks to team members, presentations and product deliveries using Azure.
+						</li>
+					</ul>
+				</section>
+				
+				<section
+					itemprop="memberOf"
+					itemscope
+					itemtype="http://schema.org/Organization"
+				>
+					<h3>
+						<span itemprop="name">Zoo Logic</span>
+					</h3>
+					<h4
+						itemprop="member"
+						itemscope
+						itemtype="http://schema.org/OrganizationRole"
+					>
+						<span itemprop="roleName">Senior BackEnd Developer</span>
+						<span class="dates">
+						<time itemprop="startDate">08/2016</time>
+						-
+						<time itemprop="endDate">05/2019</time>
+						</span>
+					</h4>
+					<ul itemprop="description">
+						<li>
+							Creation of .Net libraries for retail software aimed at clothing stores. 
+						</li>
+						<li>
+							Implementation of different payment methods such as credit cards and MercadoPago.
+						</li>
+						<li>
+							Use and creation of API Rest with external services, unit testing, and scrum methodologies.
+						</li>
+					</ul>
+				</section>
+				
+				<section
+					itemprop="memberOf"
+					itemscope
+					itemtype="http://schema.org/Organization"
+				>
+					<h3>
+						<span itemprop="name">Sistek</span>
+					</h3>
+					<h4
+						itemprop="member"
+						itemscope
+						itemtype="http://schema.org/OrganizationRole"
+					>
+						<span itemprop="roleName">Senior BackEnd Developer</span>
+						<span class="dates">
+						<time itemprop="startDate">02/2012</time>
+						-
+						<time itemprop="endDate">08/2016</time>
+						</span>
+					</h4>
+					<ul itemprop="description">
+						<li>
+							Development and maintenance of a desktop app for the retail market.
+						</li>
+						<li>
+							Internal and external staff training.
+						</li>
+						<li>
+							General tech support.
+						</li>
+					</ul>
+				</section>
+				
+			</section>
+		</div>
+		
+		<div>
+			<address id="contact" class="contact-2">
+				<div
+					id="location"
+					itemprop="address"
+					itemscope
+					itemtype="http://schema.org/PostalAddress"
+				>
+					<span itemprop="addressLocality">Buenos Aires</span>,
+					<span itemprop="addressRegion">Argentina</span>
+				</div>
+				<a href="tel:+541130361869" id="phone">(+5411) 3036-1869</a>
+				<div>
+					<a href="mailto:juan@mincucci.com.ar" id="email"
+					  >juan@mincucci.com.ar</a
+					>
+				</div>
+			</address>
+			
+			<section>
+				<h2>Programming Languages / Tools</h2>
+				<ul class="no-bullets" id="languages">
+					<li><label>C#</label></li>
+					<li><label>SQL</label></li>
+					<li><label>HTML</label></li>
+					<li><label>CSS</label></li>
+					<li><label>JavaScript</label></li>
+					<li><label>Java</label></li>
+					<li><label>VueJs</label></li>
+					<li><label>Angular</label></li>
+					<li><label>Jira</label></li>
+					<li><label>Azure</label></li>
+					<li><label>Terraform</label></li>
+					<li><label>Retool</label></li>
+				</ul>
+			</section>
+
+			<section>
+				<h2>Education</h2>
+				<ul class="no-bullets educert">
+					<li
+						itemprop="alumniOf"
+						itemscope
+						itemtype="http://schema.org/EducationalOrganization"
+					>
+						<span itemprop="name">ORT Argentina</span>
+						<ul>
+							<li itemprop="award">Computer systems analyst</li>
+						</ul>
+					</li>
+					
+					<li
+						itemprop="alumniOf"
+						itemscope
+						itemtype="http://schema.org/EducationalOrganization"
+					>
+						<span itemprop="name">EMBA</span>
+						<ul>
+							<li itemprop="award">Music production</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+		</div>
+		
+	</body>
+</html>
